@@ -21,6 +21,9 @@ fun main() {
     val numbers = arrayListOf(3, 5, 15, 2, 0, 20)
 
 
+
+
+
     println(isNumberFind(-15, numbers))
 
 }
