@@ -28,6 +28,7 @@ fun main() {
 
 }
 
+
 fun isNumberFind(input: Int, array: ArrayList<Int>): Boolean {
 
     var isNumberExist = false
