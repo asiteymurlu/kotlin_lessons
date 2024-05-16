@@ -68,20 +68,33 @@ fun calculateGrade  ( point: Int) {
 }*/
 
 //5
-/*
+
 fun main() {
-    println("Bir ədəd daxil edin:")
-     var input = readLine()!!.toInt()
-    var table  = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    //println("Bir ədəd daxil edin:")
+     //var input = readLine()!!.toInt()
+    //var table  = 1..10
 
-    multiplicationTable(input, table)
-
+    //multiplicationTable(input, table)
+    multiplacationTable3()
 }
-fun multiplicationTable(number: Int, array: ArrayList<Int>) {
-    for (i in array) {
+fun multiplicationTable(number: Int, range: IntRange) {
+    for (i in range) {
 
         println(i*number)
 
     }
 
-}*/
+}
+
+fun multiplacationTable3() {
+    for (i in 1..10) {
+
+        println("************************************")
+        println("$i -ye gore vurma cedveli: ")
+
+        for(j in 1..10) {
+            println("$i * $j = ${j * i}")
+        }
+
+    }
+}
