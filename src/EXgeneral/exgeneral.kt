@@ -7,7 +7,7 @@ package EXgeneral
 
 }
 
-    fun ortalama ( array: ArrayList<Int>): Double {  //burda Double yazanda xeta verir
+    fun ortalama ( array: ArrayList<Int>): Double {
 
         var total = 0.0
         for (i in array) {
@@ -36,7 +36,7 @@ package EXgeneral
         }
         return largest
     }*/
-
+ //3
 /*fun main() {
     isPrime(5)
 
@@ -49,7 +49,8 @@ fun isPrime ( number: Int) {
         }else
         println("eded cutdur")
 }*/
-fun main() {
+ //4
+/*fun main() {
     println(calculateGrade(80))
 
 }
@@ -64,4 +65,23 @@ fun calculateGrade  ( point: Int) {
 
 }
 
+}*/
+
+//5
+/*
+fun main() {
+    println("Bir ədəd daxil edin:")
+     var input = readLine()!!.toInt()
+    var table  = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+    multiplicationTable(input, table)
+
 }
+fun multiplicationTable(number: Int, array: ArrayList<Int>) {
+    for (i in array) {
+
+        println(i*number)
+
+    }
+
+}*/
