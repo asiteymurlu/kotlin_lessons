@@ -50,7 +50,7 @@ fun isPrime ( number: Int) {
         println("eded cutdur")
 }*/
 fun main() {
-    println(calculateGrade(80))
+ /*   println(calculateGrade(80))
 
 }
 
@@ -62,6 +62,30 @@ fun calculateGrade  ( point: Int) {
         in 60..80 -> println ("C")
         in 0..60 -> println ("D")
 
+}*/
+    println("enter number")
+    var x = readLine()!!.toInt()
+    println("enter number2")
+    var y = readLine()!!.toInt()
+    fun isOdd (x: Int) {
+        println(true)
+    }
+    fun isEven (y: Int) {
+        true
+    }
+
+    when {
+        x.isOdd() -> print("x is odd")
+        y.isEven() -> print("y is even")
+        else -> print("x+y is odd")
+    }
 }
 
+fun isOdd (number: Int) {
+   if (number%2 !== 0)
+      true
+}
+fun isEven (number: Int) {
+    if (number%2 == 0)
+        true
 }
