@@ -1,6 +1,8 @@
 package classes_objects
 
-class Phone(phoneName: String, phoneSerialNo: String, phoneColor: String) {
+import Ex7.isNumberFind
+
+/*class Phone(phoneName: String, phoneSerialNo: String, phoneColor: String) {
 
     var name: String = phoneName
     var serialNo: String = phoneSerialNo
@@ -46,4 +48,5 @@ fun changePhoneName(phone: Phone) {
 fun changeNumber(x: Int) {
     var a = x
     a = 10
-}
+}*/
+

@@ -23,7 +23,7 @@ package EX8
 
 //2
 
-    fun main () {
+   /* fun main () {
     val numbers = arrayListOf(1,2,1,0,12,3,25,12,0,36,36)
 
 
@@ -36,7 +36,7 @@ package EX8
             if (i == i)
                 println(reapited)
         }
-    }
+    }*/
 
  //3
 
