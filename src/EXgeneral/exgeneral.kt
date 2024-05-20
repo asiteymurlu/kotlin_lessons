@@ -60,7 +60,7 @@ fun isPrime ( number: Int) {
 fun main() {
  */
 /*   println(calculateGrade(80))
-=======
+
  //4
 /*fun main() {
     println(calculateGrade(80))
@@ -96,7 +96,7 @@ fun calculateGrade  ( point: Int) {
     }
 }
 
-<<<<<<< HEAD
+
 fun isOdd (number: Int) {
    if (number%2 !== 0)
       true
@@ -104,7 +104,7 @@ fun isOdd (number: Int) {
 fun isEven (number: Int) {
     if (number%2 == 0)
         true
-=======
+
 }*//*
 
 
