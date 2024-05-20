@@ -2,7 +2,7 @@ package classes_objects
 
 // 2. tapsiriq
 
-class Student {
+/*class Student {
     var name = ""
     var age = 0
     var averagePoint = 0
@@ -41,9 +41,9 @@ class Student {
 
 fun main() {
 
-    var student = Student("Sara", 19, 12)
+    var student = Student("Sara", 19, 12)*/
     //var student2 = Student(12)
-    student.info()
+    //student.info()
 
     //var student3  = Student()
     //student3.info()
@@ -51,7 +51,7 @@ fun main() {
     //student.changeStudentName(student, "Asiman")
     //student.yasiniArtir()   // eger print-i funksiyadan qiraqda burda yazsaydim onda student.age yazmaliyam age evezine
     //student.info()
-}
+//}
 // Class function-nun parametrleri nece teyin olunur ki?
 
 // 3. tapsiriq
@@ -156,3 +156,79 @@ class CarMechanic (var name : String, var experience: String, var age: Int, var 
      car.decreaseSpeed(400)
      car.info()
  }*/
+
+//************************************************************************
+// EXERCISES PART 2
+//************************************************************************
+
+//1//
+   /* class Calculator (number1: Int, number2: Int){
+    var no1 : Int = number1
+    var no2 : Int = number2
+
+    fun addition (): Int{
+        var result = no1 + no2
+        return result
+    }
+    fun subtraction (): Int {
+        var result = no1 - no2
+        return result
+    }
+
+    fun multiplication (): Int{
+        var result = no1 * no2
+        return result
+    }
+
+    fun division () : Any {
+        var result = (no1.toDouble() / no2)
+         return if (no1 !== 0) {   // return ifin icinde xeta verir
+             result
+         } else {
+             println("Operation has denied!!")
+         }
+
+    }
+    }
+
+    fun main (){
+
+        var calculator = Calculator (65, 32)
+        println (calculator.division())
+
+    }*/
+//*************************************************************************
+// 2
+ class Temperature {
+
+     var tempF = 0
+    var tempC = 0
+
+    constructor(tempFahranheit: Int){
+
+        tempF = tempFahranheit
+    }
+
+    constructor(tempCelsius: Int){
+
+        tempC = tempCelsius
+    }
+
+
+     fun exchangeTemperatureToCelsius (){
+         println("Temperature is  ${((tempF - 32) / 1.8)} Celsius" )
+
+     }
+
+    fun exchangeTemperatureToFahranheit(){
+        println("Temperature is ${(tempC * 1.8 + 32)} Fahranheit" )
+    }
+
+
+ }
+fun main (){
+
+    val temperatureCelsius = Temperature(tempFahranheit = 64)
+
+    temperatureCelsius.exchangeTemperatureToCelsius()
+}
