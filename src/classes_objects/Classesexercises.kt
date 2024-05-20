@@ -2,12 +2,22 @@ package classes_objects
 
 // 2. tapsiriq
 
-/*class Student (studentName: String, studentAge: Int, studentAveragePoint: Int) {
+class Student {
+    var name = ""
+    var age = 0
+    var averagePoint = 0
 
-    var name = studentName
-    var age = studentAge
-    var averagePoint = studentAveragePoint
+    constructor(studentAge: Int) {
+        age = studentAge
+    }
 
+    constructor()
+
+    constructor(studentName: String, studentAge: Int, studentAveragePoint: Int) {
+        age = studentAge
+        name = studentName
+        averagePoint = studentAveragePoint
+    }
 
     fun info() {
         println("Name of student is : $name")
@@ -15,84 +25,134 @@ package classes_objects
         println("Average point of student is : $averagePoint")
     }
 
-    fun yasiniArtir () {
+    fun yasiniArtir() {
 
-       age++
+        age++
     }
 
-    fun derseGet (student: Student){
+    fun derseGet(student: Student) {
 
     }
 
-    fun changeStudentName(student: Student) {
-        student.name = "Kate"
+    fun changeStudentName(student: Student, name: String) {
+        student.name = name
     }
 }
-fun main () {
 
-    var student = Student("Sara", 19, 85 )
+fun main() {
 
-    student.changeStudentName(student)
-    student.yasiniArtir()   // eger print-i funksiyadan qiraqda burda yazsaydim onda student.age yazmaliyam age evezine
+    var student = Student("Sara", 19, 12)
+    //var student2 = Student(12)
     student.info()
-    }*/
-    // Class function-nun parametrleri nece teyin olunur ki?
 
- // 3. tapsiriq
+    //var student3  = Student()
+    //student3.info()
 
-  /*  class Car {
+    //student.changeStudentName(student, "Asiman")
+    //student.yasiniArtir()   // eger print-i funksiyadan qiraqda burda yazsaydim onda student.age yazmaliyam age evezine
+    //student.info()
+}
+// Class function-nun parametrleri nece teyin olunur ki?
 
-        var speed = 0
-        var color = ""
-        var maxSpeed = 0
-        var motorOnOff = ""  //Booleanle etmek
+// 3. tapsiriq
 
-        fun runMotor(){
+/*class Car {
 
-            println("Muherrik isleyir")
-
-        }
-
-        fun motorOff(){
-          println("Muherrik islemir")
-
-         }
-
-        fun increaseSpeed() {
-            speed++
-        }
-
-        fun decreaseSpeed() {
-            speed--
-        }
-
-        fun info () {
-            println("Car speed is: $speed")
-            println("Car color is: $color")
-            println("Car max speed is: $maxSpeed")
-            println("Car engine is: $motorOnOff")
-        }
-    }
-    fun main (){
-
-        val car = Car()
-        car.speed = 120
-        car.color = "Grey"
-        car.maxSpeed = 180
-        car.motorOnOff = "Off"
+    var speed = 0
+    var name = ""                          // Classimizin deyerleri
+    var color = ""
+    var maxSpeed = 350
+    var motorOnOff: Boolean = false
+    fun runMotor() {
+        motorOnOff = true
+        println("Muherrik isleyir")
 
     }
-*/
+
+    fun motorOff() {
+        motorOnOff = false
+        println("Muherrik islemir")
+
+    }
+
+    fun increaseSpeed(number: Int) {
+        if(motorOnOff == false){
+            println("Muherrik sonuludur")
+        } else {
+            if ((speed + number) >= 350) {
+                speed = 350
+                println("Maksimum suret heddine catmisiniz!")
+            } else {
+                speed += number
+                println("Suret $number qeder artirildi!")
+                println("Hazirki suret $speed")
+            }
+
+        }
+    }
+
+    fun decreaseSpeed(number: Int) {
+        if(motorOnOff == false){
+            println("Muherrik sonuludur")
+        } else {
+            if ((speed - number) <= 0) {
+                speed = 0
+                println(" Masin dayandi")
+                motorOnOff = false
+            } else {
+                speed -= number
+                println("Suret $number qeder azaldildi!")
+                println("Hazirki suret $speed")
+            }
+
+        }
+    }
+
+    fun info() {
+        println("Car name is: $name")
+
+        println("Car speed is: $speed")
+        println("Car color is: $color")
+        println("Car max speed is: $maxSpeed")
+        println("Car engine is: $motorOnOff")
+    }
+}
+
+*//*fun main() {
+
+    val car = Car() // Car classindan car objecti yaradiriq
+    car.speed = 120
+    car.color = "Grey"
+    car.maxSpeed = 180
+    car.motorOnOff = true
+
+}*//*
+
 // tapsiriq 4
-/*class CarMechanic (var name : String, var experience: String, var age: Int, var height: Int) {
-    fun fixCar () {
-        println("$name car has fixed succesfully.")
+class CarMechanic (var name : String, var experience: String, var age: Int, var height: Int) {
+    fun fixCar (car: Car) {
+        println("${car.name} has fixed succesfully.")
     }
 }
 
  fun main () {
 
-     val carMechanic = CarMechanic("Toyota", "5 years", 16, 21)
+     val carMechanic = CarMechanic("Tural", "5 years", 21, 186)
+     val car = Car()
+     car.name = "Mercedes"
+     car.color = "Red"
 
-     carMechanic.fixCar()
+     //carMechanic.fixCar(car)
+
+
+     car.increaseSpeed(100)
+     car.runMotor()
+     car.increaseSpeed(100)
+
+     car.increaseSpeed(260)
+
+     car.info()
+
+     car.decreaseSpeed(400)
+     car.info()
  }*/
