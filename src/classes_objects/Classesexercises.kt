@@ -238,19 +238,7 @@ fun main (){
   temperature.exchangeTemperatureToFahranheit(32
   )
 }*/
-//*************************************************************************************************************************
-
-
-
-
-
-
- */
-
-
- */
-
-
+//************************************************************************************************************
 
 class Database {
     var users = arrayListOf<User>()
@@ -267,10 +255,7 @@ class Database {
 
         users.add(murad)
     }
-
-
 }
-
 class User {
 
     var name = ""
@@ -300,10 +285,8 @@ class User {
             println("Daxil oldunuz!")
         } else {
             println("Istifadeci adi ve ya parol sehvdi")
-
         }
     }
-
 }
 
 fun main() {
@@ -313,4 +296,43 @@ fun main() {
     var user1 = User("Asiman", "123")
 
     user1.loginToDatabase(db)
+}
+
+ */
+ */
+   class BankAccount {
+      var accountName = ""
+      var accountNumber = ""
+      var existMoney = 100
+
+
+      fun existMoney (){
+         println("Hesabinizdaki mebleg: $existMoney AZN")
+      }
+
+      fun increaseTheMoney (money: Int){
+       existMoney += money
+         println("Hesabiniz $money AZN artirildi")
+         println("Hesabinizdaki cemi mebleg: $existMoney AZN")
+      }
+
+      fun withdrawMoney(money: Int) {
+
+         if (money> existMoney) {
+
+            println("Hesabinizda kifayet qeder mebleg yoxdur")
+         } else
+            existMoney -= money
+         {
+         println("Hesabinizda qalan mebleg: $existMoney AZN")
+      }
+
+   } }
+   fun main (){
+
+   var bankaccaount = BankAccount()
+
+      bankaccaount.increaseTheMoney(65)
+      bankaccaount.withdrawMoney(101)
+      bankaccaount.existMoney()
 }
