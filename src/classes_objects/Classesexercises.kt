@@ -300,7 +300,7 @@ fun main() {
 
  */
  */
-   class BankAccount {
+   /*class BankAccount {
       var accountName = ""
       var accountNumber = ""
       var existMoney = 100
@@ -335,4 +335,36 @@ fun main() {
       bankaccaount.increaseTheMoney(65)
       bankaccaount.withdrawMoney(101)
       bankaccaount.existMoney()
+}*/
+// ************************************************************************************
+
+//1
+
+class Printer {
+    fun printDocument (doc:Document){
+
+    }
+}
+class Document {
+    var documents = arrayListOf<Document>()
+
+    fun addDocument (){
+
+        documents.add(Document("pdf"))
+        documents.add(Document("word"))
+        documents.add(Document("excel"))
+    }
+
+}
+
+fun main (){
+
+    var document = Document()
+    document.addDocument()
+
+    var printer = Printer()
+
+    printer.printDocument()
+
+    user1.loginToDatabase(db)
 }
