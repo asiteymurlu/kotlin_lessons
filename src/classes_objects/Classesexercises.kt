@@ -199,28 +199,19 @@ class CarMechanic (var name : String, var experience: String, var age: Int, var 
     }*/
 //*************************************************************************
 // 2
- class Temperature {
 
-     var tempF = 0
-    var tempC = 0
+/* class Temperature {
 
-    constructor(tempFahranheit: Int){
+    constructor()
 
-        tempF = tempFahranheit
-    }
+     fun exchangeTemperatureToCelsius (tempF : Int){
 
-    constructor(tempCelsius: Int){
-
-        tempC = tempCelsius
-    }
-
-
-     fun exchangeTemperatureToCelsius (){
          println("Temperature is  ${((tempF - 32) / 1.8)} Celsius" )
 
      }
 
-    fun exchangeTemperatureToFahranheit(){
+    fun exchangeTemperatureToFahranheit (tempC : Int){
+
         println("Temperature is ${(tempC * 1.8 + 32)} Fahranheit" )
     }
 
@@ -228,7 +219,29 @@ class CarMechanic (var name : String, var experience: String, var age: Int, var 
  }
 fun main (){
 
-    val temperatureCelsius = Temperature(tempFahranheit = 64)
+    val temperatureCelsius = Temperature()
+    val temperatureFahranheit = Temperature ()
+    temperatureCelsius.exchangeTemperatureToCelsius(64)
+    temperatureFahranheit.exchangeTemperatureToFahranheit(32
+    )
+}*/
+//*************************************************************************************************************************
+//3
+class Database{
+    var users = arrayListOf("user1", "user2", "user3")
+}
 
-    temperatureCelsius.exchangeTemperatureToCelsius()
+class User{
+   var name = ""
+   var password = ""
+   var emailadd = ""
+
+   fun loginToDatabase(name: String){
+      if (name in  ) {
+         println("User is allowed")
+      } else {
+         println("User has nor access")
+      }
+   }
+
 }
