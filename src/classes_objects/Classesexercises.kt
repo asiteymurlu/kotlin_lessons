@@ -42,15 +42,15 @@ package classes_objects
 fun main() {
 
     var student = Student("Sara", 19, 12)*/
-    //var student2 = Student(12)
-    //student.info()
+//var student2 = Student(12)
+//student.info()
 
-    //var student3  = Student()
-    //student3.info()
+//var student3  = Student()
+//student3.info()
 
-    //student.changeStudentName(student, "Asiman")
-    //student.yasiniArtir()   // eger print-i funksiyadan qiraqda burda yazsaydim onda student.age yazmaliyam age evezine
-    //student.info()
+//student.changeStudentName(student, "Asiman")
+//student.yasiniArtir()   // eger print-i funksiyadan qiraqda burda yazsaydim onda student.age yazmaliyam age evezine
+//student.info()
 //}
 // Class function-nun parametrleri nece teyin olunur ki?
 
@@ -162,86 +162,155 @@ class CarMechanic (var name : String, var experience: String, var age: Int, var 
 //************************************************************************
 
 //1//
-   /* class Calculator (number1: Int, number2: Int){
-    var no1 : Int = number1
-    var no2 : Int = number2
+/* class Calculator {
 
-    fun addition (): Int{
-        var result = no1 + no2
-        return result
-    }
-    fun subtraction (): Int {
-        var result = no1 - no2
-        return result
-    }
+  var number1: Int
+  var number2: Int
 
-    fun multiplication (): Int{
-        var result = no1 * no2
-        return result
-    }
+  constructor(number1: Int, number2: Int) {
+      this.number1 = number1
+      this.number2 = number2
+  }
 
-    fun division () : Any {
-        var result = (no1.toDouble() / no2)
-         return if (no1 !== 0) {   // return ifin icinde xeta verir
-             result
-         } else {
-             println("Operation has denied!!")
-         }
+  fun addition (no1: Int, no2: Int): Int{
 
-    }
-    }
+      number1 = no1
+      number2 = no2
 
-    fun main (){
+      var result = number1 + number2
+      return result
+  }
+  fun subtraction (no1: Int, no2: Int): Int {
 
-        var calculator = Calculator (65, 32)
-        println (calculator.division())
+      number1 = no1
+      number2 = no2
 
-    }*/
+      var result = number1 - number2
+      return result
+  }
+
+  fun multiplication (no1: Int, no2: Int): Int{
+      var result = no1 * no2
+      return result
+  }
+
+  fun division (no1: Int, no2: Int) : Double? {
+      var result = (no1.toDouble() / no2)
+       if (no2 != 0) {   // return ifin icinde xeta verir
+           return result
+       } else {
+           println("Operation has denied!!")
+           return null
+       }
+
+  }
+  }
+
+  fun main (){
+
+      //var calculator = Calculator (100, 18)
+      //println (calculator.division())
 //*************************************************************************
-// 2
+// 2*/
 
 /* class Temperature {
 
-    constructor()
+  constructor()
 
-     fun exchangeTemperatureToCelsius (tempF : Int){
+   fun exchangeTemperatureToCelsius (tempF : Int){
 
-         println("Temperature is  ${((tempF - 32) / 1.8)} Celsius" )
+       println("Temperature is  ${((tempF - 32) / 1.8)} Celsius" )
 
-     }
+   }
 
-    fun exchangeTemperatureToFahranheit (tempC : Int){
+  fun exchangeTemperatureToFahranheit (tempC : Int){
 
-        println("Temperature is ${(tempC * 1.8 + 32)} Fahranheit" )
+      println("Temperature is ${(tempC * 1.8 + 32)} Fahranheit" )
+  }
+
+
+}
+fun main (){
+
+  val temperature = Temperature()
+
+  temperature.exchangeTemperatureToCelsius(64)
+  temperature.exchangeTemperatureToFahranheit(32
+  )
+}*/
+//*************************************************************************************************************************
+
+
+
+
+
+
+ */
+
+
+ */
+
+
+
+class Database {
+    var users = arrayListOf<User>()
+
+    fun addTempUsers() {
+
+        var asiman = User("Asiman", "123")
+
+        users.add(asiman)
+        users.add(User("Novruz", "12223"))
+        users.add(User("Tamara", "sdhjd"))
+
+        var murad = User("Murad", "murad")
+
+        users.add(murad)
     }
 
 
- }
-fun main (){
-
-    val temperatureCelsius = Temperature()
-    val temperatureFahranheit = Temperature ()
-    temperatureCelsius.exchangeTemperatureToCelsius(64)
-    temperatureFahranheit.exchangeTemperatureToFahranheit(32
-    )
-}*/
-//*************************************************************************************************************************
-//3
-class Database{
-    var users = arrayListOf("user1", "user2", "user3")
 }
 
-class User{
-   var name = ""
-   var password = ""
-   var emailadd = ""
+class User {
 
-   fun loginToDatabase(name: String){
-      if (name in  ) {
-         println("User is allowed")
-      } else {
-         println("User has nor access")
-      }
-   }
+    var name = ""
+    var password = ""
+    var emailadd = ""
 
+    constructor(name: String, password: String) {
+
+        this.name = name
+        this.password = password
+    }
+
+
+    fun loginToDatabase(baza: Database) {
+
+        var isLogged = false
+
+        for (i in baza.users) {
+
+            if (i.name == name && i.password == password) {
+                isLogged = true
+            }
+        }
+
+
+        if(isLogged) {
+            println("Daxil oldunuz!")
+        } else {
+            println("Istifadeci adi ve ya parol sehvdi")
+
+        }
+    }
+
+}
+
+fun main() {
+    var db = Database()
+    db.addTempUsers()
+
+    var user1 = User("Asiman", "123")
+
+    user1.loginToDatabase(db)
 }

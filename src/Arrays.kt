@@ -15,9 +15,11 @@ fun main() {
         println("Number: $i")
     }*/
 
-    /*var contacts = arrayListOf("John", "Kate", "Bobby", "Micheal")
+    var contacts = arrayListOf("John", "Kate", "Bobby", "Micheal")
 
-    contacts.add("Novruz")
+
+    var novruz = "Novruz"
+    contacts.add(novruz)
     contacts.add(0, "Asiman")
 
 
@@ -25,7 +27,7 @@ fun main() {
 
     contacts.removeAt(0)
 
-    println(contacts)*/
+    println(contacts)
 
     //Sets
     /*var finCodes = hashSetOf("244l2se", "758475e2", "233945a1", "867fgh2", "244l2se")
