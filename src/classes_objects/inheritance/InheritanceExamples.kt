@@ -59,4 +59,5 @@ fun main() {
     //dog.info()
     val bird = Bird ("Qartal", 1, 12, true)
     bird.info()
+
 }
