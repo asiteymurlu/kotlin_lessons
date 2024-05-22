@@ -340,6 +340,7 @@ fun main() {
 
 //1
 
+/*
 class Printer {
     fun printDocument (doc:Document){
 
@@ -367,4 +368,4 @@ fun main (){
     printer.printDocument()
 
     user1.loginToDatabase(db)
-}
+}*/
