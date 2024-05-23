@@ -340,32 +340,35 @@ fun main() {
 
 //1
 
-/*
+/*class Document (var type : String) {
+
+}
 class Printer {
-    fun printDocument (doc:Document){
+fun printDocument (document: Document) {
 
-    }
-}
-class Document {
-    var documents = arrayListOf<Document>()
-
-    fun addDocument (){
-
-        documents.add(Document("pdf"))
-        documents.add(Document("word"))
-        documents.add(Document("excel"))
-    }
-
+    when (document.type) {
+        "pdf" -> println ("pdf fayli cap edilir")
+        "doc" -> println("word fayli cap edilir")
+        "xlsx" -> println("excel fayli cap edilir")
+        else -> println("faylin cap edilmesi mumkun  deyil")
 }
 
-fun main (){
+    } }
 
-    var document = Document()
-    document.addDocument()
 
+fun main () {
+
+    var pdfType = Document("pdf")
+    var wordType = Document("doc")
+    var excelType = Document ("xlsx")
     var printer = Printer()
 
-    printer.printDocument()
-
-    user1.loginToDatabase(db)
+    printer.printDocument(pdfType)
+    printer.printDocument(wordType)
+    printer.printDocument(excelType)
 }*/
+
+//2
+
+ class Computer (var ram:String, var diskType:String, var operatingSytem: String   )
+
