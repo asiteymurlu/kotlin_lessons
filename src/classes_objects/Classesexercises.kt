@@ -369,6 +369,59 @@ fun main () {
 }*/
 
 //2
+class Programs ( var nameOfproqram: String)
 
- class Computer (var ram:String, var diskType:String, var operatingSytem: String   )
+ class Computer (var ram:Int, var diskType:String, var operatingSytem: String) {
 
+ var programList = arrayListOf<Programs>()
+
+  fun addPrograms(){
+
+   programList.add(Programs("Zoom"))
+   programList.add(Programs("Word"))
+   programList.add(Programs("Visio"))
+
+  }
+
+
+
+ fun compStatus (power:String) {
+  var poWer = power
+  if ( poWer == "On"){
+   println("Computer is open")
+  } else {
+   println("Computer is closed")
+
+  }
+ }
+
+fun enterProqramm(enter:String){
+ var entPro = enter
+ if(entPro == "Enter"){
+  println("Proqrama daxil oldunuz")
+
+ } else {
+  println("Ugursuz")
+
+ }
+}
+
+fun determineProgramm(program: Computer) {
+    for (i in program.programList){
+     println("${i.nameOfproqram} proqrami isleyir")
+    }
+ } }
+
+
+fun main () {
+
+ var comp = Computer(8, "SSD", "Linux")
+
+
+ //comp.compStatus("On")
+
+ comp.addPrograms()
+ var program1 = Computer(8, "SSD", "Linux")
+
+ program1.determineProgramm(comp)
+}

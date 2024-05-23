@@ -5,7 +5,7 @@ import kotlin.math.PI
 fun main() {
     // 1
 
-    //greet ("Asiman")
+    greet ("Asiman")
 
     //2
 
