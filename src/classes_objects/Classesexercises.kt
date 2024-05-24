@@ -369,6 +369,7 @@ fun main () {
 }*/
 
 //2
+/*
 class Programs ( var nameOfproqram: String)
 
  class Computer (var ram:Int, var diskType:String, var operatingSytem: String) {
@@ -424,4 +425,31 @@ fun main () {
  var program1 = Computer(8, "SSD", "Linux")
 
  program1.determineProgramm(comp)
+}*/
+
+//3
+class Question() {
+
+ var questionAns = hashMapOf<String, String>()
+
+  questionAns ["5 + 3"] = "8"
+  questionAns ["5 + 2"] = "7"
+  questionAns ["4 + 1"] = "5"
+
+ constructor (qA: String)
+ var qA = questionAns
 }
+
+
+class Quiz {
+
+ var quiz = arrayListOf<Question>()
+
+ for (i in questionAns.keys) {
+  println("Key: $i -- Value: ${questionAns[i]}")
+ }
+}
+
+
+
+
