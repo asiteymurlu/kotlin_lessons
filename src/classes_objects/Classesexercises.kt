@@ -300,41 +300,41 @@ fun main() {
 
  */
  */
-   /*class BankAccount {
-      var accountName = ""
-      var accountNumber = ""
-      var existMoney = 100
+/*class BankAccount {
+   var accountName = ""
+   var accountNumber = ""
+   var existMoney = 100
 
 
-      fun existMoney (){
-         println("Hesabinizdaki mebleg: $existMoney AZN")
-      }
+   fun existMoney (){
+      println("Hesabinizdaki mebleg: $existMoney AZN")
+   }
 
-      fun increaseTheMoney (money: Int){
-       existMoney += money
-         println("Hesabiniz $money AZN artirildi")
-         println("Hesabinizdaki cemi mebleg: $existMoney AZN")
-      }
+   fun increaseTheMoney (money: Int){
+    existMoney += money
+      println("Hesabiniz $money AZN artirildi")
+      println("Hesabinizdaki cemi mebleg: $existMoney AZN")
+   }
 
-      fun withdrawMoney(money: Int) {
+   fun withdrawMoney(money: Int) {
 
-         if (money> existMoney) {
+      if (money> existMoney) {
 
-            println("Hesabinizda kifayet qeder mebleg yoxdur")
-         } else
-            existMoney -= money
-         {
-         println("Hesabinizda qalan mebleg: $existMoney AZN")
-      }
+         println("Hesabinizda kifayet qeder mebleg yoxdur")
+      } else
+         existMoney -= money
+      {
+      println("Hesabinizda qalan mebleg: $existMoney AZN")
+   }
 
-   } }
-   fun main (){
+} }
+fun main (){
 
-   var bankaccaount = BankAccount()
+var bankaccaount = BankAccount()
 
-      bankaccaount.increaseTheMoney(65)
-      bankaccaount.withdrawMoney(101)
-      bankaccaount.existMoney()
+   bankaccaount.increaseTheMoney(65)
+   bankaccaount.withdrawMoney(101)
+   bankaccaount.existMoney()
 }*/
 // ************************************************************************************
 
@@ -428,28 +428,92 @@ fun main () {
 }*/
 
 //3
-class Question() {
 
- var questionAns = hashMapOf<String, String>()
+class Question(
+    var name: String, var answer1: String, var answer2: String, var answer3: String
+) {
 
-  questionAns ["5 + 3"] = "8"
-  questionAns ["5 + 2"] = "7"
-  questionAns ["4 + 1"] = "5"
+    var correctAnswer: String = ""
 
- constructor (qA: String)
- var qA = questionAns
+    fun setsCorrectAnswer(cAnswer: String) {
+        correctAnswer = cAnswer
+    }
 }
 
 
 class Quiz {
 
- var quiz = arrayListOf<Question>()
+    var questions = arrayListOf<Question>()
+    var correctAnswerCount = 0
+    var questionsCount = 0
 
- for (i in questionAns.keys) {
-  println("Key: $i -- Value: ${questionAns[i]}")
- }
+
+    fun addQuestions() {
+
+        val question1 = Question(
+            "5 + 6 = ?",
+            "1",
+            "4",
+            "11",
+        )
+
+        question1.setsCorrectAnswer(question1.answer3)
+
+        val question2 = Question(
+            "5 * 6 = ?",
+            "5",
+            "12",
+            "30",
+        )
+
+        question2.setsCorrectAnswer(question2.answer3)
+
+        val question3 = Question(
+            "50 * 10 = ?",
+            "500",
+            "490",
+            "111",
+        )
+
+        question3.setsCorrectAnswer(question3.answer1)
+
+        questions.add(question1)
+        questions.add(question2)
+        questions.add(question3)
+
+        questionsCount = questions.size
+    }
+
+    fun startQuiz() {
+        for (i in questions) {
+            println(i.name)
+            println(i.answer1)
+            println(i.answer2)
+            println(i.answer3)
+
+            println("duzgun cavabi daxil edin: ")
+            var inputanswer = readLine()!!
+
+            if (inputanswer == i.correctAnswer) {
+                println("Cavab dogrudur")
+                correctAnswerCount++
+            }else {
+                println("Cavab yanlisdir")
+
+            }
+        }
+
+
+        println("Suallarin sayi: $questionsCount")
+        println("Duzgun cavablarin sayi: $correctAnswerCount")
+    }
 }
 
+fun main() {
 
+    val quiz = Quiz()
+    quiz.addQuestions()
 
+    quiz.startQuiz()
+}
 
