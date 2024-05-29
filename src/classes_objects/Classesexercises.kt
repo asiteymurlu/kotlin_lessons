@@ -63,6 +63,8 @@ fun main() {
     var color = ""
     var maxSpeed = 350
     var motorOnOff: Boolean = false
+
+
     fun runMotor() {
         motorOnOff = true
         println("Muherrik isleyir")
@@ -118,7 +120,7 @@ fun main() {
     }
 }
 
-*//*fun main() {
+fun main() {
 
     val car = Car() // Car classindan car objecti yaradiriq
     car.speed = 120
@@ -126,7 +128,7 @@ fun main() {
     car.maxSpeed = 180
     car.motorOnOff = true
 
-}*//*
+}
 
 // tapsiriq 4
 class CarMechanic (var name : String, var experience: String, var age: Int, var height: Int) {
@@ -429,7 +431,7 @@ fun main () {
 
 //3
 
-class Question(
+/*class Question(
     var name: String, var answer1: String, var answer2: String, var answer3: String
 ) {
 
@@ -515,5 +517,5 @@ fun main() {
     quiz.addQuestions()
 
     quiz.startQuiz()
-}
+}*/
 
