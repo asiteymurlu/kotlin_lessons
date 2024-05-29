@@ -3,7 +3,7 @@ package classes_objects
 //1) Bir eded Person sinfi yazin, icinde ona aid xusiyyetleri olsun. Bir eded Book sinifi yazin, icinde sehifelerin sayi,
 // movzusu olsun, Insan kitabi oxumaga baslasin, son sehifeye catanda kitabi bitirsin
 
-class Person (var name : String, var age: Int, var nationality: String){
+/*class Person (var name : String, var age: Int, var nationality: String){
 
 }
 
@@ -36,6 +36,6 @@ fun main (){
 
     book.finishBook(90)
 }
-}
+}*/
 
 
