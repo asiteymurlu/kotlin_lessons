@@ -87,8 +87,51 @@ fun main (){
     phone.info()
 }*/
 
-// 4) Masin, avtobus, Kamaz siniflerimiz olsun, Vehicle sinifinden toredilsin, Hamisinin ortaq ozellikleri Vehicle sinifinde olsun, bir eded Motor sinifimiz olsun, gucu, ili, olsun. Masinin, kamazin, avtobusun motoru olsun.
+// 4) Masin, avtobus, Kamaz siniflerimiz olsun, Vehicle sinifinden toredilsin,
+// Hamisinin ortaq ozellikleri Vehicle sinifinde olsun, bir eded Motor sinifimiz olsun,
+// gucu, ili, olsun. Masinin, kamazin, avtobusun motoru olsun.
 // hemcinin xodaSal, sondur kimi metodlari olsun.
+
+/*open class Vehicle(var speed :Int, var price:Int){
+    var running:Boolean = false
+
+   open fun runEngine(){
+        running = true
+       println("Muherrik ise dusdu")
+
+    }
+
+    open fun offEngine(){
+        running = false
+        println("Muherrik sonduruldu")
+    }
+}
+class Engine(var power:Int, var year:Int){
+
+
+}
+class Car( speed:Int, motor:Engine, price:Int,):Vehicle(speed, price){
+    override fun runEngine(){
+        return super.runEngine()
+    }
+
+    override fun offEngine(){
+        return super.offEngine()
+    }
+}
+class Bus(speed:Int, motor:Engine, price:Int):Vehicle(speed, price){
+
+}
+class Truck(speed:Int, motor:Engine, price:Int):Vehicle(speed,price){
+
+}
+
+fun main(){
+    var engine = Engine(500, 2013)
+     var car =Car(120,engine, 10000)
+    println(car.runEngine())
+    println(car.offEngine())
+}*/
 
 // 5) 1-10 na qeder reqemler arasinda bir reqem tutan ve o tutdugu reqemi bizim tapmagimizi
 // isdeyen bir proqram yazin, eger 3 cehdde tapa bilsek qalib oluruq, tapanmasaq uduzuruq.
@@ -98,6 +141,7 @@ fun main (){
 // uduzdunuz yazir. Proqramda random deyer yaratmaq (1-10 arasinda)
 //var randomNumber = Random.nextInt(1, 11)
 
+/*
 fun main(){
     var randomNumber = Random.nextInt(1,11)
 
@@ -121,4 +165,77 @@ fun main(){
         println("Uduzdunuz, $i cehdde dogru cavabi tapa bilmediniz")
     }
 
+}*/
+
+// Phone sinifine elave olaraq mahnilarin siyahisini elave edin, ve
+// playMusic(musicName: String), stopMusic(), kimi metodlari olsun. Mahni ayrica bir
+// sinif olsun.
+/*
+class Camera(var megapixel:Int, var lensCount: Int, var portretmode:Boolean) {
+
 }
+class Screen( var colorCount:Long, var size:Double, var isCurve: Boolean ) {
+
+}
+class Music(){
+    var musics = arrayListOf<String>()
+
+    fun addMusic(){
+        musics.add("Diamond")
+        musics.add("Ring my bells")
+        musics.add("Together")
+    }
+}
+class Phone(var name:String, var camera :Camera, var screen:Screen, var music: Music)
+{
+    var playing:Boolean = false
+    fun info(){
+        println("Telefonun adi: $name ")
+        println("telefonun kamera ozellikleri: ")
+        println("Kamera megapixeli: ${camera.megapixel}")
+        println("Kamerain lensi: ${camera.lensCount}")
+        println("Telefonun ekraninin eyriliy: ${screen.isCurve}")
+
+    }
+
+    fun playMusic(musicName: String){
+        for (musicName in music.musics){
+            playing = true
+            println("$musicName is playing")
+        }
+    }
+
+    fun stopMusic(){
+        playing
+        println("Music has stopped")
+    }
+}
+
+fun main (){
+var music = Music()
+    var camera = Camera(200, 4, true)
+    var screen = Screen(160000000,6.54,true )
+    var phone = Phone("Poco",camera, screen, music)
+
+    //phone.info()
+    music.addMusic()
+    phone.playMusic("Diamond")
+}*/
+
+// Bir faktorial hesablama funksiyasi yazin.
+
+fun main (){
+   println("Faktorialin hesablanmasi ucun bir eded daxil edin:")
+    var number = readLine()!!.toInt()
+factorial(3)
+}
+    fun factorial (n:Int){
+        var result: Int
+        if (n == 0){
+            result = 1
+            println("$n-in faktoriali $result-a beraberdir")
+        } else { for (i in 1..n)
+            result = 1
+            result = result*i++
+        }
+    }
