@@ -224,18 +224,22 @@ var music = Music()
 
 // Bir faktorial hesablama funksiyasi yazin.
 
-fun main (){
-   println("Faktorialin hesablanmasi ucun bir eded daxil edin:")
+fun main() {
+    println("Faktorialin hesablanmasi ucun bir eded daxil edin:")
     var number = readLine()!!.toInt()
-factorial(3)
+    println(factorial(number) )
 }
-    fun factorial (n:Int){
-        var result: Int
-        if (n == 0){
-            result = 1
-            println("$n-in faktoriali $result-a beraberdir")
-        } else { for (i in 1..n)
-            result = 1
-            result = result*i++
+
+fun factorial(n: Int):Int {
+    var result: Int = 1
+    if (n == 0) {
+        result = 1
+    } else {
+
+        for (i in 1..n) {
+            result *= i
         }
+
     }
+        return result
+}
