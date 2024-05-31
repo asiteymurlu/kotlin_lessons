@@ -43,48 +43,54 @@ fun main() {
 
 */
 
-open class Vehicle {
-
-}
-
-open class Transport {
-
-}
-
-
-class Car: Vehicle(), Drivable {
-    override fun drive() {
-        println()
-    }
-
-}
-
-interface Drivable {
-    fun drive()
-}
-
-interface Flyable {
-    fun fly()
-}
-
-class Airplane: Drivable, Flyable{
-    override fun fly() {
-        println("Flying")
-
-    }
-
-    override fun drive() {
-        println("Driving")
-    }
-}
-
-
-
-
 fun main() {
-    val car = Car()
-    car.drive()
-    var airplane = Airplane()
-    airplane.drive()
-    airplane.fly()
+    var circle = Circle(2)
+    var rectangle = Rectangle(4, 6)
+    var triangle =Triangle(4,6,8,5)
+    println( "Cevrenin sahesi:" + circle.calculateArea())
+    println("Cevrenin perimetri: ${circle.calculatePerimeter()}")
+    println( "Ucbucagin sahesi:" + triangle.calculateArea())
+    println("Ucbucagin perimetri: ${triangle.calculatePerimeter()}")
+    println( "Dorbucaqlinin sahesi:" + rectangle.calculateArea())
+    println("Dordbucaqlinin perimetri: ${rectangle.calculatePerimeter()}")
 }
+
+interface Shape {
+
+     fun calculateArea(): Double
+
+
+
+      fun calculatePerimeter(): Double
+
+
+}
+
+class Circle(var radius: Int) : Shape {
+    override fun calculateArea(): Double {
+        return Math.PI * radius * radius
+    }
+
+    override fun calculatePerimeter(): Double {
+        return 2 * Math.PI * radius
+    }
+}
+
+class Rectangle(var left: Int, var right: Int) : Shape {
+    override fun calculateArea(): Double {
+        return left * right.toDouble()
+    }
+
+    override fun calculatePerimeter(): Double {
+        return 2 * (left + right).toDouble()
+    }
+}
+
+class Triangle(var left: Int, var right: Int, var bottom: Int, var meridian: Int) : Shape {
+    override fun calculateArea(): Double {
+        return 0.5 * bottom * meridian
+    }
+
+    override fun calculatePerimeter(): Double {
+        return left + right + bottom.toDouble()
+    } }
