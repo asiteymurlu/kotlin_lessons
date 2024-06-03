@@ -2,37 +2,41 @@ package EXcompany
 
 open class Company (var nameOfCompany:String, var servicePrice:Int, var budget:Double) {
     var employeesList = arrayListOf<String>()
+    var sumOfSalary = 5000
 
     fun runemployeesList(){
+        for(i in employeesList){
+            println("$i")
+        }
 
     }
     fun lookUpEmployee(name:String){
-        for (name in employeesList){
-            println("$name movcuddur")
+        for (i in employeesList){
+            if (i == name){
+                println("$name")
+            } else {
+                println("Isci tapilmadi")
+            }
         }
     }
 
     fun paySalary(){
+        var leftMoney= budget - sumOfSalary
+        println("Budcede qalan mebleg $leftMoney AZN-dir")
+
 
     }
     fun dismiss(){
-
+        employeesList.remove([0])
     }
 
     fun hiring(){
-
+        employeesList.add()
     }
 }
-Metodlari:
-1) Iscilerin siyahisini ekrana yazdir (Yan yana vergul ile)
-2) Istenilen iscini axtarmaq, adina ve ya soyadina gore, eger isci varsa hemin iscileri print etmek, yoxdusa isci tapilmadi print etmek
-3) Iscilerin maasin ver metodu, umumi budceden butun iscilerin maasin cixsin, yekun budceni ekrana yazdirsin. Budce menfide ola biler.
 
-4) Iscini isden cixarmaq, iscinin id sine gore axtaris edib iscini tapmaq ve isden cixarmaq.
 
-5) Isci ise goturmek, siyahiya yeni isci elave etmek.
-
-class Employee(var name:String, var surname:String, var age:Int, var salary:Int, var working: Boolean){
+class Employee(var name:String, var surname:String, var age:Int, var salary:Int, var working: Boolean, nameOfCompany: String, servicePrice: Int, budget: Double):Company(nameOfCompany, servicePrice,budget){
 
     fun info(){
 
@@ -46,7 +50,7 @@ class Employee(var name:String, var surname:String, var age:Int, var salary:Int,
 
 }
 
-class Director{
+class Director (){
     fun sikayeteBax(name:Employee, lastname:Employee, sikayetMetni:String){
 
     }
