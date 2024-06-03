@@ -1,6 +1,8 @@
 package EXcompany
 
-open class Company (var nameOfCompany:String, var servicePrice:Int, var employeesList: String, var budget:Double) {
+open class Company (var nameOfCompany:String, var servicePrice:Int, var budget:Double) {
+    var employeesList = arrayListOf<String>()
+
     fun runemployeesList(){
 
     }
