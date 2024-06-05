@@ -1,6 +1,6 @@
 package EXcompany
 
-open class Company (var nameOfCompany:String, var servicePrice:Int, var budget:Double) {
+/*open class Company (var nameOfCompany:String, var servicePrice:Int, var budget:Double) {
     var employeesList = arrayListOf<String>()
     var sumOfSalary = 5000
 
@@ -64,10 +64,5 @@ class Worker{
 
     }
 
-}
-interface AllowToRemoteWorking {
+}*/
 
-}
-interface NotAllowToRemoteWorking{
-
-}
