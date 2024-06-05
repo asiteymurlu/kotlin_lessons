@@ -36,7 +36,7 @@ open class Company (var nameOfCompany:String, var servicePrice:Int, var budget:D
 }
 
 
-class Employee(var name:String, var surname:String, var age:Int, var salary:Int, var working: Boolean, nameOfCompany: String, servicePrice: Int, budget: Double):Company(nameOfCompany, servicePrice,budget){
+class Employee(var name:Company, var surname:Company, var age:Int, var salary:Int, var working: Boolean, nameOfCompany: String, servicePrice: Int, budget: Double):Company(nameOfCompany, servicePrice,budget){
 
     fun info(){
 
