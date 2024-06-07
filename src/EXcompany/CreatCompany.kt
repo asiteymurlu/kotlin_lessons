@@ -28,7 +28,7 @@ class Director(id: Int, name: String,surname: String,age: Int, working: Boolean)
     }
 
     fun sikayeteBax(worker: Worker, sikayetMetni:String){
-
+        println("Direktor ${this.name} , isci ${worker.name} in sikayetine baxdi. Sikayet metni: $sikayetMetni")
     }
 }
 class Manager(id: Int, name: String,surname: String,age: Int, working: Boolean):Employee(id, name, surname,age, working), AllowToRemoteWorking{
@@ -63,6 +63,9 @@ class Company(var companyName: String, var servicePrice:Int, var budget:Double) 
         var totalSalary=0.0
 
         for (i in employeesList) {
+
+            println("Maas: ${i.salary}")
+
             totalSalary += i.salary
         }
     var leftMoney = budget - totalSalary
@@ -94,10 +97,15 @@ class Company(var companyName: String, var servicePrice:Int, var budget:Double) 
         var isEmployeeExist = false
 
         for (i in employeesList){
+
             if (i.id == employee.id){
                 isEmployeeExist = true
             }
         }
+
+        println("IS EMPLOYEE EXIST: $isEmployeeExist")
+
+
         if (isEmployeeExist == true){
             employeesList.remove(employee)
         } else {
@@ -115,11 +123,22 @@ class Company(var companyName: String, var servicePrice:Int, var budget:Double) 
     }
 
     fun findEmployee(nameOrSurname:String){
+
+        var findedEmplyees = arrayListOf<Employee>()
+
         for (i in employeesList){
+
             if (i.name == nameOrSurname ||  i.surname == nameOrSurname){
-                println("Isci: ${i.name} ${i.surname}")
-            } else {
-                println("Isci tapilmadi")
+                findedEmplyees.add(i)
+            }
+        }
+
+
+        if(findedEmplyees.isEmpty()) {
+            println("Isci tapilmadi")
+        }  else {
+            for(employee in findedEmplyees) {
+                println("Isci: ${employee.name} ${employee.surname}")
             }
         }
     }
@@ -131,15 +150,29 @@ interface AllowToRemoteWorking {
 fun main() {
     var company = Company("ABC Company", 10000, 1000000.0)
     var employee = Employee(2, "Asiman", "Teymurlu", 19, true)
-    var worker = Worker(2, "Asiman", "Teymurlu", 19, true)
-    var director = Director(2, "Asiman", "Teymurlu", 19, true)
-    company.employeesList
-    company.findEmployee("Teymurlu")
-    company.paySalary()
-    company.fireEmployee(employee)
+    var worker = Worker(3, "Asi", "Teymurlu", 19, true)
+    var director = Director(4, "Novruz", "Cafarov", 19, true)
+
+    director.salary = 10000.0
+
     company.addEmployee(employee)
+    company.addEmployee(worker)
+    company.addEmployee(director)
+
+
+    company.showAllEmployeesInfo()
+
+    company.findEmployee("Teymurlu")
+
+    company.paySalary()
+
+    var worker1 = Worker(5, "Asi", "Teymurlu", 19, true)
+    company.fireEmployee(worker1)
+
+
+
     worker.directoraSikayetEt("Maasim azdi, isim coxdu",director)
-    director.sikayeteBax(worker, "Maasim azdi, isim coxdu")
+
 }
 
 
