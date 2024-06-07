@@ -1,7 +1,7 @@
 package EXcompany
 
 open class Employee(var id: Int, var name: String, var surname: String, var age: Int, var working: Boolean) {
-    var salary = 1000
+    var salary = 1000.0
 
 
     fun startWork(){
@@ -56,6 +56,19 @@ class Worker(id: Int, name: String,surname: String,age: Int, working: Boolean):E
 }
 class Company(var companyName: String, var servicePrice:Int, var budget:Double) {
     val employeesList = arrayListOf<Employee>()
+
+
+
+    fun paySalary() {
+        var totalSalary=0.0
+
+        for (i in employeesList) {
+            totalSalary += i.salary
+        }
+    var leftMoney = budget - totalSalary
+    println("Budcede qalan mebleg $leftMoney AZN-dir")
+
+}
 
     fun addEmployee(employee: Employee) {
         var isDublicatedEmployee = false
@@ -112,15 +125,21 @@ class Company(var companyName: String, var servicePrice:Int, var budget:Double) 
     }
 
 }
-
-fun main() {
-    var company = Company("ABC Company", 10000, 1000000.0)
-
-
-    company.employeesList
-}
-
-
 interface AllowToRemoteWorking {
     fun isAllowToRemoteWorking(): Boolean
 }
+fun main() {
+    var company = Company("ABC Company", 10000, 1000000.0)
+    var employee = Employee(2, "Asiman", "Teymurlu", 19, true)
+    var worker = Worker(2, "Asiman", "Teymurlu", 19, true)
+    var director = Director(2, "Asiman", "Teymurlu", 19, true)
+    company.employeesList
+    company.findEmployee("Teymurlu")
+    company.paySalary()
+    company.fireEmployee(employee)
+    company.addEmployee(employee)
+    worker.directoraSikayetEt("Maasim azdi, isim coxdu",director)
+    director.sikayeteBax(worker, "Maasim azdi, isim coxdu")
+}
+
+
