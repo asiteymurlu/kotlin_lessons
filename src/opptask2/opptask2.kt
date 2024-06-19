@@ -54,7 +54,21 @@ class NotesApp(){
             println("Note is already exist")
         }
     }
+    fun removeNote(note: Note){
+        var isDublicatedNote = false
 
+        for (i in notes ){
+            if (i.id == note.id){
+                isDublicatedNote = true
+            }
+        }
+        if (isDublicatedNote == true){
+            notes.remove(note)
+            println("Note has removed")
+        }else {
+            println("Note is already exist")
+        }
+    }
     fun getAllNotes (){
         for (i in notes){
             println(i.content)
