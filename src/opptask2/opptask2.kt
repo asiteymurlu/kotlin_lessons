@@ -26,28 +26,33 @@ noteSil(note: Note)
 noteDeyisdir(id, title, content) (Bu metod id ye gore note axtarsin eger varsa hemin notu metodda verilen
  deyerlere gore deyisdirsin, yoxdusa note tapilmadi yazsin) */
 
-class Note(var id: Int, var title: String, var content: String, var priorityValue: Int, var statusId: Int){
+class Note(var id: Int, var title: String, var content: String, var priorityValue: Int, var statusId: Boolean){
 
     fun info(){
         println(Note(id,title,content, priorityValue, statusId))
     }
 
-    fun doneNote(){
-
+    fun doneNote(newStatusId:Boolean){
+    var statusId = false
+        if (statusId == true){
+            println("Note has done")
+        }
     }
 }
 
 class NotesApp(){
     var notes = arrayListOf<Note>()
+
+
     fun addNote(note:Note){
-        var isDublicatedNote = false
+        var dublicatedNote = false
 
         for (i in notes ){
             if (i.id == note.id){
-                isDublicatedNote = true
+                dublicatedNote = true
             }
         }
-        if (isDublicatedNote == false){
+        if (dublicatedNote == false){
             notes.add(note)
             println("Note has added")
         }else {
@@ -71,11 +76,12 @@ class NotesApp(){
     }
     fun getAllNotes (){
         for (i in notes){
-            println(i.content)
+            i.info()
+            println("------------------------------")
         }
     }
 
-    fun getNotesDueToStatus(statusId1: Int){
+    fun getNotesDueToStatus(statusId1: Boolean){
         for (i in notes){
             if (i.statusId == statusId1){
                 println(i.title)
@@ -102,5 +108,26 @@ class NotesApp(){
                 println("Note found")
             }
         }
+    }
+
+    fun changeNote(note: Note){
+        for (i in notes){
+            if (i.id == note.id){
+                println("Enter new credentials: id, title and content")
+                var newid = readLine()!!.toInt()
+                var newtitle = readLine()!!.toString()
+                var newcontent = readLine()!!.toString()
+                i.id = newid
+                i.title = newtitle
+                i.content = newcontent
+            println("Note changed succesfully: ${i.id}   ${i.title}   ${i.content}")
+            } else {
+                println("Note found")
+            }
+        }
+    }
+
+    fun noteDone(note: Note){
+        note.statusId = true
     }
 }
