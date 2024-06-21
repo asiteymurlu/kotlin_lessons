@@ -1,6 +1,7 @@
 package opptask2
 
-/*class Book (var id: Int, var name: String, var content: String ) {
+/*
+class Book (var id: Int, var name: String, var content: String ) {
 
     fun info() {
         println("ID: $id, Title: $name, content: $content")
@@ -10,7 +11,9 @@ package opptask2
 class Library() {
     private var books = arrayListOf<Book>()
 
-
+    fun getBooks () : ArrayList<Book> {
+        return books
+    }
     fun addBook(book: Book) {
         var dublicatedBook = false
 
@@ -21,9 +24,9 @@ class Library() {
         }
         if (dublicatedBook == false) {
             books.add (book)
-            println("Note has added")
+            println("Book has added")
         } else {
-            println("Note is already exist")
+            println("Book is already exist")
         }
     }
 
@@ -41,18 +44,43 @@ class Library() {
         } else {
             println("Book not found")
         }
-    } }*/
+    } }
+
+fun main(){
+    var book = Book(1, "Tomun serguzestleri", "Adventure")
+    var book1 = Book(2, "Tom", "Dram")
+    var library = Library()
+    library.addBook(book)
+    library.addBook(book1)
+     // book.info()
+
+       for (i in library.getBooks()) {
+           i.info()
+       }
+}
+*/
 
 
 
-
-class App (){
+class App() {
 
 }
-class SystemApp(){
 
+class SystemApp(private var name: String, private var size: Int) {
+    fun getName(): String {
+        return name
+    }
+
+    fun getSize(): Int {
+        return size
+    }
 }
-class Phone (){
+
+class Phone() {
     var programs = arrayListOf<App>()
-    private var systenPrograms = arrayListOf<SystemApp>()
+    private var systemPrograms = arrayListOf<SystemApp>()
+
+    fun getSystemPrograms(): ArrayList<SystemApp> {
+        return systemPrograms
+    }
 }

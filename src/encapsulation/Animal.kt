@@ -12,5 +12,4 @@ class Animal(
  fun main(){
      var animal = Animal("mesdan", 3)
 
-     animal.
  }
