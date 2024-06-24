@@ -42,6 +42,12 @@ NullPointerException aldiginda onu try catch ile handle etmek.*/
 
 class Warehouse( var id :Int, var name: String, var product: Product, var balance: Double){
     val products = arrayListOf<Product>()
+
+    fun getProductToBarcode(barcode: Product){
+        for(i in products){
+           if (i.barcode == barcode)
+        }
+    }
 }
 data class Product(var id: Int, var barcode:Int, var price:Double, var year:Int, var name:String){
 
