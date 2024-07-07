@@ -44,8 +44,8 @@ class Warehouse( var id :Int, var name: String, var product: Product, var balanc
     val products = arrayListOf<Product>()
 
     fun getProductToBarcode(barcode: Product){
-        for(i in products){
-           if (i.barcode == barcode)
+        for(i in products) {
+            if (i.barcode == barcode)
         }
     }
 }
