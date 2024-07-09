@@ -155,6 +155,20 @@ class User (var id: Int, var username : String, var name: String, var password: 
 
     }
 
+    fun sendMessage (message:String, user: User){
+        var outbox = arrayListOf<String>()
+        outbox.add(message)
+        println("$message sent to $user")
+
+    }
+
+    fun getMessage(message: String, user: User){
+        var inbox = arrayListOf<String>()
+        inbox.add(message)
+        println("You have a message from $user")
+    }
+
+
 }
 
 class Post (var id:Int, var title: String, var content: String,){
