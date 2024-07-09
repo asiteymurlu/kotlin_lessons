@@ -47,24 +47,127 @@ Post sinifi
 *Metodlar
 1) postu beyenen userlerin siyahisi
 2) beyenenlerin sayi */
-
-open class SocialNetwork {
+class SocialNetwork( ) {
 
     var users = arrayListOf<User>()
     var posts = arrayListOf<Post>()
+
+    fun searchUser (username: String) {
+
+        var userExist = false
+        var user: User? = null
+
+        for (i in users){
+            if (i.username == username){
+                userExist = true
+                user = i
+
+            }
+        }
+
+
+        if(userExist){
+            user!!.info()
+        } else {
+            println("$username istifadecisi movcud deyil")
+        }
+    }
+
+    fun searchPost (title:String){
+        val searchingPost = arrayListOf<Post>()
+
+        for (i in posts){
+            if (i.title == title){
+                searchingPost.add(i)
+            }
+        }
+        searchingPost.forEach { it.info() }
+    }
+
+    fun deleteUser(id: Int){
+        for (i in users){
+            if (i.id == id){
+                users.remove(i)
+            }
+        }
+    }
+
+    fun deletePost(id: Int){
+        for (i in posts){
+            if (i.id == id){
+                posts.remove(i)
+            }
+        }
+    }
+
+    fun login(user: User){
+
+        var isLogged = false
+
+        for (i in users){
+            if (i.username == user.username && i.password == user.password ) {
+                isLogged = true
+            }
+        }
+
+        if(isLogged){
+            println("${user.name} dail oldu")
+        } else {
+            println(" istifadeci adi ve ya sifre yanlisdir")
+        }
+
+    }
 }
 class User (var id: Int, var username : String, var name: String, var password: String){
-    var followers = arrayListOf<SocialNetwork>()
-    var following = arrayListOf<SocialNetwork>()
+    var followers = arrayListOf<User>()
+    var following = arrayListOf<User>()
     var likedPosts = arrayListOf<Post>()
+
+    fun info(){
+        println("User id: $id, username: $username, name: $name, password: $password ")
+    }
+
+    fun printFollowers(){
+        println("$username - Followers: ")
+        for (i in followers){
+            i.info()
+            println("*********************************************")
+        }
+    }
+    fun printFollowing(){
+        println("$username - Following: ")
+        for (i in following){
+            i.info()
+            println("**********************************************************")
+        }
+    }
+
+    fun acceptFollow (newfollower:User){
+        followers.add(newfollower)
+        newfollower.following.add(this)
+        println("${newfollower.username} has added")
+    }
+
+    fun sendFollowRequest (user: User){
+        following.add(user)
+        user.followers.add(this)
+        println("${user.username} is following")
+
+    }
+
 }
 
 class Post (var id:Int, var title: String, var content: String,){
     var usersLikedPost = arrayListOf<User>()
 
     fun likedPostUsers (){
-        for (i in use)
+        for (i in )
 
     }
+
+    fun info(){
+        println("Post(id=$id, title='$title', content='$content', usersLikedPost=$usersLikedPost)")
+    }
+
 
 }
