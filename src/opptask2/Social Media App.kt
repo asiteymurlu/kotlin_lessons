@@ -122,6 +122,9 @@ class User (var id: Int, var username : String, var name: String, var password: 
     var followers = arrayListOf<User>()
     var following = arrayListOf<User>()
     var likedPosts = arrayListOf<Post>()
+    var outbox = arrayListOf<Message>()
+    var inbox = arrayListOf<Message>()
+
 
     fun info(){
         println("User id: $id, username: $username, name: $name, password: $password ")
@@ -155,33 +158,106 @@ class User (var id: Int, var username : String, var name: String, var password: 
 
     }
 
-    fun sendMessage (message:String, user: User){
-        var outbox = arrayListOf<String>()
+    fun sendMessage (message:Message, user: User){
+
         outbox.add(message)
-        println("$message sent to $user")
+        user.inbox.add(message)
+        println("${message.user.username} sent to ${user.username}")
 
     }
 
-    fun getMessage(message: String, user: User){
-        var inbox = arrayListOf<String>()
-        inbox.add(message)
-        println("You have a message from $user")
+    fun getInboxMessages(){
+        inbox.forEach { it.info() }
     }
 
+    fun getOutboxMessages(){
+        outbox.forEach { it.info() }
+    }
 
+    fun likePost(post:Post){
+        likedPosts.add(post)
+        post.usersLikedPost.add(this)
+        println("You liked this $post ")
+
+    }
+    fun unLikePost(post: Post){
+        likedPosts.remove(post)
+        post.usersLikedPost.remove(this)
+        println("You unlike this $post")
+    }
+
+    fun showLikedPosts(){
+        likedPosts.forEach { it.info() }
+    }
+
+    fun showFollowers(){
+        followers.forEach { it.info() }
+    }
+
+    fun showFollowing(){
+        following.forEach { it.info() }
+    }
 }
 
 class Post (var id:Int, var title: String, var content: String,){
     var usersLikedPost = arrayListOf<User>()
 
     fun likedPostUsers (){
-        for (i in )
+        usersLikedPost.forEach { it.info() }
 
     }
+
+    fun countUsersLikedPost(){
+       println("Postu like eden userlerin sayi : ${usersLikedPost.size}")
+    }
+
 
     fun info(){
         println("Post(id=$id, title='$title', content='$content', usersLikedPost=$usersLikedPost)")
     }
 
+}
 
+class Message(var user : User, var text: String){
+    fun info() {
+        println("Message(username=${user.username}, text='$text')")
+    }
+}
+
+fun main(){
+    val socialNetwork = SocialNetwork()
+
+    var user1 = User(1, "asi", "Asiman", "1234")
+    var user2 = User(2, "asim", "Asi", "1234a")
+    var user3 = User(3, "tamara", "Tamara", "1234b")
+
+    socialNetwork.users.add(user1)
+    socialNetwork.users.add(user2)
+    socialNetwork.users.add(user3)
+
+    var post1 = Post(10, "Equality", "Gender beraberliyi")
+    var post2 = Post(11, "Sport", "Football")
+
+    /*var message1 = Message(user1, " Salam" )
+    user1.sendMessage(message1,user2)
+
+    var message2 = Message(user1, " Necsesen" )
+
+    user1.sendMessage(message2, user3)
+
+    user1.getOutboxMessages()*/
+
+    /*user1.sendFollowRequest(user3)
+    user1.sendFollowRequest(user2)
+
+    user1.showFollowing()
+    user3.showFollowers()*/
+
+    user3.likePost(post1)
+    user3.likePost(post2)
+    //user3.showLikedPosts()
+
+    user2.likePost(post1)
+
+    post1.likedPostUsers()
 }
