@@ -1,5 +1,8 @@
 package exception_handling
 
+import kotlin.jvm.Throws
+import kotlin.math.log
+
 /*
 import java.io.IOException
 
@@ -37,16 +40,36 @@ fun closeDatabase() {
 
 fun main() {
 
-    var cars = arrayListOf("BMW", "MERCEDES", "AUDI")
+    /*var cars = arrayListOf("BMW", "MERCEDES", "AUDI")
 
     try {
         println("Cars 3 index: ${cars[3]}")
 
-    } catch (e: IndexOutOfBoundsException){
+    } catch (e:Exception) {
         println("Bu index yoxdur")
     } finally {
         println("Test")
-    }
+    }*/
 
+    /*try {
+        login("", "sdsd")
+
+    } catch (e: UserExpiredException) {
+        println(e.message)
+    }*/
+
+
+    login("", "")
+
+}
+
+@Throws(UserExpiredException::class)
+fun login(username: String, password: String){
+    if(username.isEmpty()) {
+        throw UserExpiredException()
+    }
+}
+
+class UserExpiredException(): Exception("User is expired"){
 
 }
