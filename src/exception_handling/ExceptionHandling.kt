@@ -38,9 +38,9 @@ fun closeDatabase() {
 }*/
 
 
-fun main() {
+/*fun main() {
 
-    /*var cars = arrayListOf("BMW", "MERCEDES", "AUDI")
+    *//*var cars = arrayListOf("BMW", "MERCEDES", "AUDI")
 
     try {
         println("Cars 3 index: ${cars[3]}")
@@ -49,18 +49,19 @@ fun main() {
         println("Bu index yoxdur")
     } finally {
         println("Test")
-    }*/
+    }*//*
 
-    /*try {
+    *//*try {
         login("", "sdsd")
 
     } catch (e: UserExpiredException) {
         println(e.message)
-    }*/
+    }*//*
 
 
-    login("", "")
+    login("", "")*/
 
+/*
 }
 
 @Throws(UserExpiredException::class)
@@ -72,4 +73,55 @@ fun login(username: String, password: String){
 
 class UserExpiredException(): Exception("User is expired"){
 
+}*/
+
+
+/*fun dividing (){
+    println("Iki eded daxil edin")
+    var number1 = readLine()!!.toInt()
+    var number2 = readLine()!!.toInt()
+    var result = number1/number2.toDouble()
+
+    if (number2 == 0) {
+        throw ArithmeticException(println("0-a bolmek olmaz").toString())
+
+    }
+    else {
+        println("Netice : $result")
+    }
+}
+      fun main(){
+          println(dividing())
+      }*/
+
+fun dividing () {
+
+    var isExitProgram = false
+
+
+    while (!isExitProgram){
+
+        try {
+            println("Iki eded daxil edin")
+            var number1 = readLine()!!.toInt()
+            var number2 = readLine()!!.toInt()
+
+            if(number1 == 5 && number2 == 5) {
+                isExitProgram = true
+            }
+
+            var result = number1 / number2
+
+            println("Netice: $result")
+        } catch (e: NumberFormatException) {
+            println("DUZGUN daxi ledin")
+        } catch (e: ArithmeticException) {
+            println("0-a bolmek olmaz")
+
+        }
+    }
+}
+
+fun main() {
+    dividing()
 }
