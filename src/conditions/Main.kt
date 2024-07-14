@@ -49,7 +49,7 @@ fun main() {
     }*/
 
 
-    var studentPoint : Int?
+   /* var studentPoint : Int?
 
     println("Telebe balini daxil edin")
 
@@ -75,8 +75,8 @@ fun main() {
             print ("Kesildiniz")
 
     }
-
-    /*var age = 13
+*/
+    var age = 13
 
     when (age) {
         5,13 -> {
@@ -87,6 +87,5 @@ fun main() {
 
         }
 
-    }*/
-
+    }
 }
